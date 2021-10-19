@@ -1,28 +1,32 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import { List } from '../screens/List';
-import { TextDemo, ButtonDemo, FormDemo } from '../screens/Demos';
-
-const MainStack = createStackNavigator();
+import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
+import { TouchableOpacity } from 'react-native';
+import { Start } from '../screens';
 
 export const Main = () => (
-  <MainStack.Navigator>
-    <MainStack.Screen name="List" component={List} />
-    <MainStack.Screen
-      name="TextDemo"
-      component={TextDemo}
-      options={{ headerTitle: 'Text Demo' }}
-    />
-    <MainStack.Screen
-      name="FormDemo"
-      component={FormDemo}
-      options={{ headerTitle: 'Button Demo' }}
-    />
-    <MainStack.Screen
-      name="ButtonDemo"
-      component={ButtonDemo}
-      options={{ headerTitle: 'Button Demo' }}
-    />
-  </MainStack.Navigator>
+  <Stack.Navigator>
+    <Stack.Screen name="Start" component={Start} options={{ ...customTransition }}/>
+  </Stack.Navigator>
 );
+
+TouchableOpacity.defaultProps = { ...(TouchableOpacity.defaultProps || {}), delayPressIn: 0 };
+
+const Stack = createStackNavigator();
+
+const openConfig = {
+  ...TransitionSpecs.ScaleFromCenterAndroidSpec,
+  config: {
+    ...TransitionSpecs.ScaleFromCenterAndroidSpec.config,
+    duration: 500
+  }
+};
+
+const customTransition = {
+  gestureEnabled: true,
+  gestureDirection: 'horizontal',
+  transitionSpec: {
+    open: openConfig,
+    close: TransitionSpecs.ScaleFromCenterAndroidSpec,
+  },
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+};
