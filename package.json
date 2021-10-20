@@ -62,7 +62,7 @@
     "jest",
     "eslint",
     "prettier",
-    "redux",
+    "context",
     "paper",
     "theme"
   ],
