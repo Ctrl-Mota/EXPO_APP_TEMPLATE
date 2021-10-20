@@ -1,4 +1,4 @@
-# React Native School Expo Template
+# React Native Ctrl-Mota Expo Template
 
 A simple Expo template with the following features:
 
@@ -7,6 +7,10 @@ A simple Expo template with the following features:
 - Testing Configured
 - Simple project structure
 - Small component library to get started with
+- LightTheme and DarkTheme pre-configureds
+- UseContext with UseReducer to manage global contexts
+- Boosted navigator animation for an increased visual performance
+
 
 It's easy to create a project, strip out the few components included, and still have the architecture in place to quickly start building an app.
 
@@ -15,7 +19,7 @@ It's easy to create a project, strip out the few components included, and still 
 > Be sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed.
 
 ```bash
-expo init --template @Ctrl-Mota/expo-template
+expo init --template @ctrl-mota/expo-template
 ```
 
 - Run on iOS: `yarn ios` or `npm run ios`
