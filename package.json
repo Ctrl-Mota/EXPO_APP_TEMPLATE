@@ -1,10 +1,14 @@
 {
+  "name": "@ctrl-mota/expo-template",
+  "version": "1.0.0",
+  "description": "Template for custom install of an Expo project",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android --localhost",
     "ios": "expo start --ios --localhost",
     "web": "expo start --web",
+    "clear": "expo r -c --localhost",
     "eject": "expo eject",
     "lint": "eslint .",
     "format": "prettier --write '**/*.js'",
@@ -24,7 +28,8 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "expo-splash-screen": "~0.11.2"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
@@ -52,18 +57,23 @@
     "expo",
     "template",
     "expo-template",
-    "react-native-school",
     "react-native",
     "react-native-template",
     "jest",
     "eslint",
-    "prettier"
+    "prettier",
+    "redux",
+    "paper",
+    "theme"
   ],
-  "homepage": "https://github.com/ReactNativeSchool/react-native-school-expo-template",
-  "bugs": {
-    "url": "https://github.com/ReactNativeSchool/react-native-school-expo-template/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ctrl-Mota/expo-template.git"
   },
-  "author": "Spencer Carli",
+  "author": "Lucas Mota",
   "license": "MIT",
-  "private": true
+  "bugs": {
+    "url": "https://github.com/Ctrl-Mota/expo-template/issues"
+  },
+  "homepage": "https://github.com/Ctrl-Mota/expo-template#readme"
 }
