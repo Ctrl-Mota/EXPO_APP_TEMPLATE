@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Main } from './src/navigation/Main';
 import useCustomTheme from './src/util/hooks/useCustomTheme';
 import useCachedResources from './src/util/hooks/useCachedResources';
-import { coinReducer, DispatchContext, initialState, StateContext } from './src/util/redux/reducer';
+import { coinReducer, DispatchContext, initialState, StateContext } from './src/util/context/reducer';
 
 export default function App() {
     const isLoadingComplete = useCachedResources();

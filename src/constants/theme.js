@@ -1,16 +1,50 @@
-import { DefaultTheme } from 'react-native-paper'
+import { DefaultTheme, DarkTheme } from 'react-native-paper'
+import { Dimensions, Platform, PixelRatio } from 'react-native';
 
-export const theme = {
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 320;
+
+function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
+
+export const _DefaultTheme ={
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    text: '#000000',
-    primary: '#00508a',
-    secondary: '#1b2d62',
-    success: '#28a745',
-    lowGray: '#dedede',
-    error: 'rgb(253, 63, 95)',
-    cursoLabel: '#a50404e0',
-    reservaLabel: '#0e7b02d1'
-  },
+  }
+} 
+export const _DarkTheme = 
+ {
+  ...DarkTheme,
+      colors: {
+        ...DarkTheme.colors
+      }
+}
+
+export const fontSize = {
+    mini: normalize(12),
+    small: normalize(16),
+    medium: normalize(18),
+    large: normalize(21),
+    xlarge: normalize(26),
+    custom: n => normalize(n)
+}
+export  {SCREEN_WIDTH, SCREEN_HEIGHT}
+
+/* 
+  {function} Porcent width
+  */
+export function pwi(scale){
+  return (SCREEN_WIDTH / 100) * scale
 }
