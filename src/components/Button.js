@@ -1,45 +1,37 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { Button as PaperButton } from 'react-native-paper'
+import { fontSize } from '../constants/theme'
+import useCustomTheme from '../util/hooks/useCustomTheme';
 
-import colors from '../constants/colors';
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.primary,
-    paddingVertical: 14,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: colors.primary,
-    marginVertical: 7,
-  },
-  containerOutline: {
-    backgroundColor: 'transparent',
-    borderColor: colors.border,
-  },
-
-  text: {
-    color: colors.white,
-    alignSelf: 'center',
-    fontSize: 18,
-    fontWeight: '500',
-  },
-  textOutline: {
-    color: colors.primary,
-  },
-});
-
-export const Button = ({ onPress = () => {}, children = '', type }) => {
-  const containerStyles = [styles.container];
-  const textStyles = [styles.text];
-
-  if (type === 'outline') {
-    containerStyles.push(styles.containerOutline);
-    textStyles.push(styles.textOutline);
-  }
+export default function Button({ mode, style, styleText, ...props }) {
+  const { colors } = useCustomTheme();
+  const styles = customStyles(colors);
 
   return (
-    <TouchableOpacity onPress={onPress} style={containerStyles}>
-      <Text style={textStyles}>{children}</Text>
-    </TouchableOpacity>
-  );
-};
+    <PaperButton
+      style={[
+        styles.button,
+        mode === 'outlined' && { backgroundColor: colors.surface },
+        style,
+      ]}
+      
+      labelStyle={[styles.text, styleText]}
+      mode={mode}
+      {...props}
+    />
+  )
+}
+
+const customStyles = colors => StyleSheet.create({
+  button: {
+    flex: 1,
+    margin: 10,
+    backgroundColor: colors.accent,
+  },
+  text: {
+    color: colors.text,
+    fontSize: fontSize.medium,
+    fontWeight: 'bold',
+  },
+})
