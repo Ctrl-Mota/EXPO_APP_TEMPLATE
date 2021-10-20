@@ -1,32 +1,19 @@
 import React from 'react';
-import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native';
-import { Start } from '../screens';
-
-export const Main = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Start" component={Start} options={{ ...customTransition }}/>
-  </Stack.Navigator>
-);
-
-TouchableOpacity.defaultProps = { ...(TouchableOpacity.defaultProps || {}), delayPressIn: 0 };
+import { Start, Wallet } from '../screens';
+import { NavigatorProps, StartOptions, WalletOptions } from './customOptions';
 
 const Stack = createStackNavigator();
 
-const openConfig = {
-  ...TransitionSpecs.ScaleFromCenterAndroidSpec,
-  config: {
-    ...TransitionSpecs.ScaleFromCenterAndroidSpec.config,
-    duration: 500
-  }
-};
+TouchableOpacity.defaultProps = { ...(TouchableOpacity.defaultProps || {}), delayPressIn: 0 };
 
-const customTransition = {
-  gestureEnabled: true,
-  gestureDirection: 'horizontal',
-  transitionSpec: {
-    open: openConfig,
-    close: TransitionSpecs.ScaleFromCenterAndroidSpec,
-  },
-  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
-};
+export const Main = () => {
+
+return(
+  <Stack.Navigator {...NavigatorProps} >
+    <Stack.Screen name="Start" component={Start} options={{ ...StartOptions }}/>
+    <Stack.Screen name="Wallet" component={Wallet} options={{ ...WalletOptions }}/>
+  </Stack.Navigator>
+);
+}
