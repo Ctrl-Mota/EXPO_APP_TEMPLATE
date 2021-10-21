@@ -1,4 +1,4 @@
-# React Native Ctrl-Mota Expo Template
+# React Native Expo Template
 
 A simple Expo template with the following features:
 
