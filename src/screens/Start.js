@@ -1,11 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {
-  coinReducer,
   DispatchContext,
-  initialState,
   StateContext,
-  StoreContext,
 } from '../util/context/reducer';
 import { pwi, fontSize } from '../constants/theme';
 import Button from '../components/Button';
@@ -57,13 +54,13 @@ const customStyles = colors =>
       backgroundColor: colors.background,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 20,
+      padding: pwi(7),
     },
     viewButtons: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      padding: pwi(2),
+      marginTop: '5%'
     },
     boxCoin: {
       width: pwi(10),

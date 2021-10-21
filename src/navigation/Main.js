@@ -1,9 +1,9 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { Start, Wallet } from '../screens';
 import { NavigatorProps, StartOptions, WalletOptions } from './customOptions';
-import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useTheme } from 'react-native-paper';
 import CText from '../components/CText';
 import { fontSize } from '../constants/theme';
 import { StateContext } from '../util/context/reducer';
-import { useTheme } from 'react-native-paper';
 
 const Wallet = ({ navigation }) => {
   const { colors } = useTheme();
