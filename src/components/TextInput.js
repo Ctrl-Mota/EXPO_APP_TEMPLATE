@@ -1,12 +1,10 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { TextInput as Input } from 'react-native-paper'
-import { theme } from '../constants/theme'
-import useCustomTheme from '../util/hooks/useCustomTheme'
+import { TextInput as Input, ThemeProvider, useTheme } from 'react-native-paper'
 
 const TextInput = React.forwardRef((props, ref) => {
   const {errorText, description} = props;
-  const { colors } = useCustomTheme();
+  const { colors } = useTheme();
   const styles = customStyles(colors);
 
   return (
@@ -33,7 +31,7 @@ const customStyles = colors => StyleSheet.create({
   },
   input: {
     backgroundColor: colors.surface,
-    color: 'black',
+    color: colors.text,
     height: 60
   },
   description: {

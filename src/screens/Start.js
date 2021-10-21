@@ -4,12 +4,11 @@ import { coinReducer, DispatchContext, initialState, StateContext, StoreContext 
 import { pwi, fontSize } from '../constants/theme';
 import Button from '../components/Button';
 import { decrease, increase } from '../util/context/actions';
-import { IconButton } from 'react-native-paper';
-import useCustomTheme from '../util/hooks/useCustomTheme';
+import { IconButton, useTheme } from 'react-native-paper';
 import CText from '../components/CText';
 
 const Start = ({ navigation }) => {
-  const { colors } = useCustomTheme();
+  const { colors } = useTheme();
   const styles = customStyles(colors);
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);

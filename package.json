@@ -1,6 +1,6 @@
 {
   "name": "@ctrl-mota/expo-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Template for custom install of an Expo project",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "clear": "expo r -c --localhost",
     "eject": "expo eject",
     "lint": "eslint .",
-    "format": "prettier --write '**/*.js'",
+    "format": "prettier --write src//**/*.{js,jsx,json}",
     "test": "jest"
   },
   "dependencies": {
@@ -33,25 +33,11 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
-    "@testing-library/jest-native": "^4.0.1",
-    "@testing-library/react-hooks": "^5.1.2",
-    "@testing-library/react-native": "^7.2.0",
     "eslint": "^7.24.0",
     "eslint-config-handlebarlabs": "^0.0.6",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "jest-expo": "^42.0.0",
-    "prettier": "^2.2.1",
-    "react-test-renderer": "^17.0.2"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
-    ]
+    "prettier": "^2.2.1"
   },
   "keywords": [
     "expo",
@@ -59,7 +45,6 @@
     "expo-template",
     "react-native",
     "react-native-template",
-    "jest",
     "eslint",
     "prettier",
     "context",
