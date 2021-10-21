@@ -1,38 +1,41 @@
-import { TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
+import {
+  TransitionSpecs,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 
 const openConfig = {
-    ...TransitionSpecs.ScaleFromCenterAndroidSpec,
-    config: {
-        ...TransitionSpecs.ScaleFromCenterAndroidSpec.config,
-        duration: 500
-    }
+  ...TransitionSpecs.ScaleFromCenterAndroidSpec,
+  config: {
+    ...TransitionSpecs.ScaleFromCenterAndroidSpec.config,
+    duration: 500,
+  },
 };
 
 const customTransition = {
-    gestureEnabled: true,
-    gestureDirection: 'horizontal',
-    transitionSpec: {
-        open: openConfig,
-        close: TransitionSpecs.ScaleFromCenterAndroidSpec,
-    },
-    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+  gestureEnabled: true,
+  gestureDirection: 'horizontal',
+  transitionSpec: {
+    open: openConfig,
+    close: TransitionSpecs.ScaleFromCenterAndroidSpec,
+  },
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 };
 
 export const NavigatorProps = {
-    initialRouteName: "Start",
-    screenOptions: {
-        headerShown: true,
-        headerBackTitle: "Voltar",
-        headerTransparent: true,
-    }
+  initialRouteName: 'Start',
+  screenOptions: {
+    headerShown: true,
+    headerBackTitle: 'Voltar',
+    headerTransparent: true,
+  },
 };
 export const StartOptions = {
-    ...customTransition,
-    headerTitle: 'Store',
+  ...customTransition,
+  headerTitle: 'Store',
 };
 
 export const WalletOptions = {
-    ...customTransition,
-    headerTitle: 'Wallet',
-    headerBackTitle: "Back",
+  ...customTransition,
+  headerTitle: 'Wallet',
+  headerBackTitle: 'Back',
 };

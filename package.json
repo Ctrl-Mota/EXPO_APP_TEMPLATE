@@ -11,7 +11,8 @@
     "clear": "expo r -c --localhost",
     "eject": "expo eject",
     "lint": "eslint .",
-    "format": "prettier --write src//**/*.{js,jsx,json}",
+    "check-format": "prettier --check \"src/**/*\".{js,jsx,json}",
+    "format": "prettier --write \"src/**/*\".{js,jsx,json}",
     "test": "jest"
   },
   "dependencies": {
