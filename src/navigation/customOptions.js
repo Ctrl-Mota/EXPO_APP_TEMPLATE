@@ -1,5 +1,6 @@
 import {
   TransitionSpecs,
+  TransitionPresets,
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 
@@ -35,7 +36,7 @@ export const StartOptions = {
 };
 
 export const WalletOptions = {
-  ...customTransition,
+  ...TransitionPresets.DefaultTransition,
   headerTitle: 'Wallet',
   headerBackTitle: 'Back',
 };
